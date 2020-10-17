@@ -1,0 +1,16 @@
+{% extends 'layout/layoutMail.twig' %}
+
+{% block content %}
+
+	Hallo {{ user.username }},<br/><br/>
+	
+	ein herzliches Willkommen bei der Regierungsmannschaft! Bitte bestätige Deine Registrierung über den folgenden Link:<br/><br/>
+
+	<a href="{{ url }}{{ path_for('auth.verify') }}?username={{user.username}}&verification={{user.verification}}">Account aktivieren</a><br/><br/>
+	
+	Falls Du dich nicht bei der Regierungsmannschaft registriert haben solltest, dann kannst Du diese Mail einfach ignorieren.
+	
+	<br/>Vielen Dank!<br/>
+	Die Regierungsmannschaft
+
+{% endblock %}

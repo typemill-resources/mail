@@ -1,0 +1,14 @@
+{% extends 'layout/layoutMail.twig' %}
+
+{% block content %}
+
+	Hallo Tipp-Gemeinschaft,<br/><br/>
+	die Wahl ist vorbei und damit beginnt das schwierige Ringen um Koalitionen, Regierungsprogramme und Ministerposten. Für die neue Regierungsmannschaft kannst du noch bis zum
+	<br/><br/>{{ date }}
+	<br/><br/>deinen Tipp abgeben. Logge dich für die Tipp-Abgabe einfach bei der Regierungsmannschaft ein:
+	<br/><br/><a href="{{ url }}">Jetzt tippen</a>
+	<br/><br/>Falls die Deadline noch einmal geändert wird, werden alle Mitglieder erneut benachrichtigt.<br/>
+	<br/><br/>Viele Grüße und uns allen viel Glück<br/>
+	Die Regierungsmannschaft
+
+{% endblock %}

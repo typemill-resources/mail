@@ -1,0 +1,14 @@
+{% extends 'layout/layoutMail.twig' %}
+
+{% block content %}
+
+	Hi {{ user.username }},<br/><br/>
+	
+	bitte klicke auf den folgenden Link, um ein neues Passwort zu vergeben:<br/><br/>
+
+	<a href="{{ url }}{{ path_for('auth.resetpw') }}?reset={{reset}}">Passwort zurücksetzen</a>
+	<br/>
+	<br/>Deine<br/>
+	Regierungsmannschaft
+
+{% endblock %}

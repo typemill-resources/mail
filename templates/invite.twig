@@ -1,0 +1,20 @@
+{% extends 'layout/layoutMail.twig' %}
+
+{% block content %}
+
+	Hi,<br/><br/>
+	
+	{{ user.username }} hat dich zur Tipp-Gruppe {{ group.title }} bei <a href="{{ url }}">Regierungsmannschaft.de</a> eingeladen. Du kannst der Gruppe über diesen Link beitreten:<br/><br/>
+
+	<a href="{{ url }}{{ path_for('groups.joinGroup') }}?invite={{token}}">Jetzt beitreten</a>
+	
+	<br/><br/>
+	Regierungsmannschaft ist eine Tipp-Gemeinschaft für die Bundestagswahl.
+
+	<br/><br/>
+	<small>Du kannst die Einladung unter diesem Link löschen: <a href="{{ url }}{{ path_for('groups.deleteInvite') }}?invite={{token}}">Einladung löschen</a></small>
+	
+	<br/><br/>Viele Grüße<br/>
+	Regierungsmannschaft
+
+{% endblock %}
