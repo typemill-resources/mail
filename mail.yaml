@@ -1,12 +1,13 @@
 ﻿name: Mail
-version: 1.0.1
-description: Send mails with our own mail-account (SMTP) or php mail function.
+version: 1.0.3
+description: Send mails with the php mail function or with an smtp account.
 author: Sebastian Schürmanns
 homepage: https://typemill.net
 licence: Mixed
 
 settings:
   from_address: your@email-here.io
+  CharSet: 'UTF-8'
 
 forms:
   fields:
@@ -21,6 +22,11 @@ forms:
       type: text
       placeholder: Your Name
       label: Name that appears in the adress bar
+
+    CharSet:
+      type: text
+      label: Character Set of your Mails
+      placeholder: 'UTF-8'
 
     fieldsetone:
       type: fieldset
@@ -62,8 +68,3 @@ forms:
         password:
           type: password
           label: Password of your mail-account
-
-        CharSet:
-          type: text
-          label: Character Set of your Mails
-          placeholder: 'UTF8'

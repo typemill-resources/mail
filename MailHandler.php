@@ -14,6 +14,11 @@ class MailHandler
 		$this->mail = $mail;
 		$this->twig = $twig;
 	}
+
+	public function ClearAllRecipients()
+	{
+		$this->mail->ClearAllRecipients();
+	}
 	
 	public function addAdress($address, $name = '')
 	{

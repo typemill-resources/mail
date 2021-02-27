@@ -30,6 +30,11 @@ class Mail extends Plugin
 			$mail->From			= $config['from_address'];
 			$mail->FromName		= $config['from_name'];
 			$mail->Sender		= $config['from_address'];
+
+			if(isset($config['CharSet'])) 
+			{ 
+				$mail->CharSet = $config['CharSet']; 
+			}
 						
 			if(isset($config['SMTP']))
 			{
@@ -45,7 +50,6 @@ class Mail extends Plugin
 				if(isset($config['SMTPAuth'])){ $mail->SMTPAuth = $config['SMTPAuth']; }
 				if(isset($config['username'])){ $mail->Username = $config['username']; }
 				if(isset($config['password'])){ $mail->Password = $config['password']; }
-				if(isset($config['CharSet'])) { $mail->CharSet = $config['CharSet']; }
 			}
 			else
 			{
