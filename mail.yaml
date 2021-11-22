@@ -1,5 +1,5 @@
-﻿name: Mail
-version: 1.0.3
+name: Mail
+version: 1.0.4
 description: Send mails with the php mail function or with an smtp account.
 author: Sebastian Schürmanns
 homepage: https://typemill.net

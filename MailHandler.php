@@ -52,7 +52,7 @@ class MailHandler
 	
     public function addAttachment($path, $name = '')
     {
-		$this->mail->addAttachment($path, $name, $encoding = self::ENCODING_BASE64, $type = '', $disposition = 'attachment');
+		$this->mail->addAttachment($path, $name);
 	}
 	
     public function msgHTML($message, $basedir = '', $advanced = false)
