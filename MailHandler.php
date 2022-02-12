@@ -14,11 +14,6 @@ class MailHandler
 		$this->mail = $mail;
 		$this->twig = $twig;
 	}
-
-	public function ClearAllRecipients()
-	{
-		$this->mail->ClearAllRecipients();
-	}
 	
 	public function addAdress($address, $name = '')
 	{
@@ -79,6 +74,29 @@ class MailHandler
 	{
 		$this->mail->AltBody = $altbody;
 	}
+
+    public function ClearAttachments()
+    {
+        $this->mail->clearAttachments();
+    }
+
+    public function ClearCustomHeaders()
+    {
+        $this->mail->clearCustomHeaders();
+    }
+
+	public function ClearAllRecipients()
+	{
+		$this->mail->ClearAllRecipients();
+	}
+
+	public function ClearMail()
+	{
+		$this->mail->ClearAllRecipients();
+        $this->mail->clearAttachments();
+        $this->mail->clearCustomHeaders();
+	}
+
 
     public function send()
     {	
