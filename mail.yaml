@@ -64,7 +64,9 @@ forms:
           type: email
           label: Username of your mail-account
           placeholder: My Username
+          autocomplete: off
 
         password:
           type: password
           label: Password of your mail-account
+          autocomplete: new-password
