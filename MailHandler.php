@@ -99,7 +99,7 @@ class MailHandler
 
 
     public function send()
-    {	
+    {
 		# create a mail-error-logger that stores error messages, maybe even displays in admin
 		# catch the smtp-errors this way: https://stackoverflow.com/questions/39565769/get-full-error-message-from-phpmailer-exception/39571423
 		try{

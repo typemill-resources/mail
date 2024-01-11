@@ -12,20 +12,20 @@ class Mail extends Plugin
 {
     public static function getSubscribedEvents()
     {
-		return array(
-			'onTwigLoaded' 			=> 'onTwigLoaded'
-		);
+		return [
+			'onTwigLoaded' 	=> ['onTwigLoaded', 0]
+		];
     }
 
 	# add the mail configuration
 	public function onTwigLoaded()
 	{
 		$mail 		= new PHPMailer;
-		$container 	= $this->container;
-		$config 	= $this->getPluginSettings('mail');
+		$config 	= $this->getPluginSettings();
 		$twig		= $this->getTwig();
-		
-		$this->container['mail'] = function($container) use ($mail,$config,$twig)
+		$container 	= $this->container;
+
+		$this->container->set('mail', function($container) use ($mail, $config, $twig)
 		{
 			$mail->From			= $config['from_address'];
 			$mail->FromName		= $config['from_name'];
@@ -35,8 +35,8 @@ class Mail extends Plugin
 			{ 
 				$mail->CharSet = $config['CharSet']; 
 			}
-						
-			if(isset($config['SMTP']))
+
+			if(isset($config['SMTP']) && $config['SMTP'])
 			{
 				date_default_timezone_set('Etc/UTC');
 				
@@ -57,6 +57,6 @@ class Mail extends Plugin
 			}
 			
 			return new MailHandler($mail, $twig);
-		};
+		});
 	}
 }

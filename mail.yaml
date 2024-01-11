@@ -1,9 +1,9 @@
 name: Mail
-version: 1.0.8
+version: 2.0.0
 description: Send mails with the php mail function or with an smtp account.
 author: Sebastian Schürmanns
 homepage: https://typemill.net
-licence: Mixed
+license: MIT
 
 settings:
   from_address: your@email-here.io
@@ -17,6 +17,7 @@ forms:
       label: Send mails with this e-mail-account
       placeholder: your@email-here.io
       required: true
+      description: The email address domain should match the domain of your website. Mismatched domains could trigger spam filters.
 
     from_name:
       type: text
